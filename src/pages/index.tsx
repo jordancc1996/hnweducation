@@ -3,9 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Globe, Award, BookOpen, GraduationCap, Building } from 'lucide-react';
+import { ArrowRight, Users, Globe, Award, BookOpen, GraduationCap, Building, Send } from 'lucide-react';
 import Layout from '@/components/Layout';
-import ContactForm from '@/components/ContactForm';
 
 
 const HomePage = () => {
@@ -281,8 +280,142 @@ const HomePage = () => {
         </div>
       </section>
 
- {/* Contact Form Section */}
-<ContactForm />
+{/* Contact Form Section */}
+<section className="section-padding bg-gradient-to-br from-gray-900 to-primary-900 text-white">
+  <div className="container">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Left Side - Content */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="space-y-6"
+      >
+        <div>
+          <div className="text-sm font-semibold tracking-wider text-gold-300 mb-4">
+            CONTACT
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bodoni font-bold text-gold-400 leading-tight mb-6">
+            We'd be glad to talk - let's take it from here.
+          </h2>
+        </div>
+        
+        <div className="space-y-4 text-gray-300">
+          <p className="text-lg">
+            Ready to begin your family's educational journey? We're here to 
+            provide expert guidance tailored to your unique needs.
+          </p>
+          <div className="pt-4">
+            <a 
+              href="mailto:info@hnweducation.com"
+              className="text-gold-300 hover:text-gold-200 transition-colors"
+            >
+              info@hnweducation.com
+            </a>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Right Side - Form */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative"
+      >
+        <form action="https://formspree.io/f/xeokleoq" method="POST" className="space-y-6">
+          {/* Name Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
+                First Name <span className="text-gold-400">*</span>
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300"
+                placeholder="Enter your first name"
+              />
+            </div>
+            <div>
+              <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
+                Last Name <span className="text-gold-400">*</span>
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                required
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300"
+                placeholder="Enter your last name"
+              />
+            </div>
+          </div>
+
+          {/* Email */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              Email <span className="text-gold-400">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300"
+              placeholder="Enter your email address"
+            />
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+              Phone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300"
+              placeholder="Enter your phone number"
+            />
+          </div>
+
+          {/* Message */}
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+              Message <span className="text-gold-400">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows={5}
+              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 resize-none"
+              placeholder="Tell us about your educational needs and how we can help..."
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div className="pt-4">
+            <button
+              type="submit"
+              className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-gold-400 text-gold-400 font-semibold rounded-full hover:bg-gold-400 hover:text-gray-900 transition-all duration-300"
+            >
+              <Send className="w-5 h-5" />
+              SEND
+            </button>
+          </div>
+        </form>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
 
     </Layout>
