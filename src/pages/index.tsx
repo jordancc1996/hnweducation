@@ -249,7 +249,7 @@ const HomePage = () => {
             >
               <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/learning.jpg"
                   alt="Educational Excellence"
                   fill
                   className="object-cover"
