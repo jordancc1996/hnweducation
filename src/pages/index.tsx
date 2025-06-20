@@ -93,7 +93,7 @@ const HomePage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/#contact" className="btn-primary">
+              <Link href="#contact" className="btn-primary">
                 Start Your Journey
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -281,7 +281,7 @@ const HomePage = () => {
       </section>
 
 {/* Contact Form Section */}
-<section className="section-padding bg-gradient-to-br from-gray-900 to-primary-900 text-white">
+<section id="contact" className="section-padding bg-gradient-to-br from-gray-900 to-primary-900 text-white">
   <div className="container">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Left Side - Content */}
