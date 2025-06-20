@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Users, Globe, Award, BookOpen, GraduationCap, Building } from 'lucide-react';
 import Layout from '@/components/Layout';
+import ContactForm from '@/components/ContactForm';
+
 
 const HomePage = () => {
   const services = [
@@ -279,33 +281,10 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="section-padding bg-primary-500">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center text-white"
-          >
-            <h2 className="section-title mb-6">
-              Ready to Begin Your Educational Journey?
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Contact us today to discover how we can help your family access 
-              the finest educational opportunities worldwide.
-            </p>
-            <a
-              href="mailto:info@hnweducation.com"
-              className="inline-flex items-center gap-2 bg-white text-primary-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
-            >
-              Get In Touch
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </motion.div>
-        </div>
-      </section>
+ {/* Contact Form Section */}
+<ContactForm />
+
+
     </Layout>
   );
 };
